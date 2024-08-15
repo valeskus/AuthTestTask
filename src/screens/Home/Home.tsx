@@ -10,8 +10,8 @@ export function Home(): JSX.Element {
     const { onPressLogin, onPressRegister } = useHomeController();
     return (
         <SafeAreaView style={styles.homeContainer}>
-            <View style={{ flex: 1 }}>
-                <Image style={{ width: '100%', height: '100%' }} source={ImageConstants.homeIcom} />
+            <View style={styles.imageContainer}>
+                <Image style={styles.image} source={ImageConstants.homeIcom} />
             </View>
             <View style={styles.screenContainer}>
                 <Text style={styles.header}>Welcome to App</Text>

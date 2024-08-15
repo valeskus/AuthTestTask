@@ -9,7 +9,7 @@ export function Login(): JSX.Element {
     return (
         <View style={styles.loginContainer}>
             <Header description="Please enter your details." />
-            <View style={{ flex: 2 }}>
+            <View style={styles.form}>
                 <Input label='Phone number' placeholder='+33 222 111 2222' />
                 <Button title="Login" onPress={() => { }} />
                 <View style={styles.noteContainer}>

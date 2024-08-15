@@ -5,6 +5,13 @@ export const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: 'white'
     },
+    imageContainer: {
+        flex: 1
+    },
+    image: {
+        width: '100%',
+        height: '100%'
+    },
     header: {
         fontSize: 30,
         fontWeight: '600',

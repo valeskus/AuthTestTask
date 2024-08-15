@@ -29,8 +29,6 @@ export type Props = {
     onKeyPressed?: (e: NativeSyntheticEvent<TextInputKeyPressEventData>) => void;
 };
 
-//TOOD types
-
 export function Input({
     type,
     label,

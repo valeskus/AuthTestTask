@@ -11,7 +11,7 @@ export const useRegisterCodeController = () => {
     const navigation = useNavigation();
 
     useEffect(() => {
-        if(!phoneNumber){
+        if (!phoneNumber) {
             return
         }
         sentCode(phoneNumber)
@@ -29,9 +29,14 @@ export const useRegisterCodeController = () => {
         navigation.navigate('Login')
     }, [code, name, lastName, phoneNumber])
 
+    const onResent = useCallback(() => {
+        sentCode(phoneNumber)
+    }, [phoneNumber])
+
     return {
         handleChange,
         onSignUp,
+        onResent,
         disabled: !code
     }
 }

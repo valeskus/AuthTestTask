@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pressable, Text, View } from "react-native";
+import { Pressable, ScrollView, Text, View } from "react-native";
 import { Input } from '../../../UI/Input';
 import { Link } from '@react-navigation/native';
 import { styles } from './styles';
@@ -20,7 +20,11 @@ export function RegisterForm(): JSX.Element {
     } = useRegistrationFormController();
 
     return (
-        <View style={{ flex: 1 }}>
+        <ScrollView style={styles.formContainer}
+            automaticallyAdjustKeyboardInsets={true}
+            contentContainerStyle={{
+                flex: 1
+            }}>
             <Header description='Please enter your details.' />
             <View style={styles.formContainer}>
                 <Input label='Name' placeholder='Enter name' onChangeText={onChangeName} value={name} />
@@ -35,6 +39,6 @@ export function RegisterForm(): JSX.Element {
                 </View>
             </View>
 
-        </View>
+        </ScrollView>
     )
 }

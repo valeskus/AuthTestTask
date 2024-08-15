@@ -42,12 +42,12 @@ export function App(): JSX.Element {
             paddingHorizontal: 15,
           }
         }}>
-           <Stack.Screen
+          <Stack.Screen
             name="Home"
             component={Home}
             options={{ headerShown: false }}
           />
-           <Stack.Screen
+          <Stack.Screen
             name="RegisterForm"
             component={RegisterForm}
             options={{ headerShown: false }}
