@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 import { Colors } from '../Colors';
 
 export const styles = StyleSheet.create({
@@ -6,18 +6,18 @@ export const styles = StyleSheet.create({
     backgroundColor: Colors.primary,
     width: '100%',
     borderRadius: 10,
-    marginBottom: 30,
+    marginBottom: 15,
   },
-  secondaryButton:{
+  secondaryButton: {
     backgroundColor: 'white',
     borderColor: Colors.secondary,
     borderWidth: 1,
   },
-  secondaryButtonTitle:{
+  secondaryButtonTitle: {
     color: Colors.primaryTextColor
   },
   buttonPressed: {
-    transform: [{scale: 0.9}],
+    transform: [{ scale: 0.9 }],
   },
   buttonDisabled: {
     backgroundColor: Colors.secondaryButtonColor,

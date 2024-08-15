@@ -4,7 +4,6 @@ import {
     StyleProp,
     ViewStyle,
     Text,
-    ActivityIndicator,
 } from 'react-native';
 import { styles } from './styles';
 
@@ -13,13 +12,11 @@ export type Props = {
     onPress: () => void;
     pressableStyle?: StyleProp<ViewStyle>;
     disabled?: boolean;
-    isLoading?: boolean;
     secondaryStyle?: boolean;
 };
 
 export function Button({
     title,
-    isLoading,
     onPress,
     pressableStyle,
     disabled,
@@ -28,7 +25,7 @@ export function Button({
     return (
         <Pressable
             onPress={onPress}
-            disabled={disabled || isLoading}
+            disabled={disabled}
             style={({ pressed }) => [
                 styles.button,
                 secondaryStyle && styles.secondaryButton,

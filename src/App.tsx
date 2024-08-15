@@ -35,7 +35,12 @@ export function App(): JSX.Element {
     <Provider store={store}>
       <StatusBar backgroundColor="transparent" barStyle="dark-content" translucent />
       <NavigationContainer >
-        <Stack.Navigator>
+        <Stack.Navigator screenOptions={{
+          cardStyle: {
+            backgroundColor: 'white',
+            paddingHorizontal: 15
+          }
+        }}>
           <Stack.Screen
             name="Home"
             component={Home}
