@@ -16,3 +16,11 @@ export const register = async (userInfo: RegisterFormModel): Promise<number> => 
 
   return result.status;
 };
+
+export const login = async (phoneNumber: string): Promise<number> => {
+  const result = await client.post('/login', {
+    phoneNumber
+  });
+
+  return result.status;
+};
