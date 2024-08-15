@@ -18,7 +18,8 @@ if (
 
 export type RootStackParamList = {
   Home: undefined;
-  Register: undefined;
+  RegisterForm: undefined;
+  RegisterCode: undefined;
   Login: undefined;
 };
 
@@ -38,9 +39,14 @@ export function App(): JSX.Element {
         <Stack.Navigator screenOptions={{
           cardStyle: {
             backgroundColor: 'white',
-            paddingHorizontal: 15
+            paddingHorizontal: 15,
           }
         }}>
+          <Stack.Screen
+            name="Login"
+            component={Login}
+            options={{ headerShown: false }}
+          />
           <Stack.Screen
             name="Home"
             component={Home}
@@ -54,11 +60,6 @@ export function App(): JSX.Element {
           <Stack.Screen
             name="RegisterCode"
             component={RegisterCode}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="Login"
-            component={Login}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>

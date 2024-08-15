@@ -1,7 +1,7 @@
 export const Colors = {
     primaryTextColor: '#14171D',
     secondaryTextColor: '#667085',
-    tertiaryTextColor: '#00D1AC ',
+    tertiaryTextColor: '#00D1AC',
     primary: '#30B0C7',
     borderColor: '#DE7ED9',
     secondaryBorderColor: '#EEE8F0',
