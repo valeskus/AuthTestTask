@@ -1,7 +1,4 @@
-import { Pressable, Text, View } from "react-native";
-import { Input } from "../../UI/Input";
-import { Button } from "../../UI/Button";
-import { LinkButton } from "../../UI/LinkButton";
+import { Text, View } from "react-native";
 import { styles } from './styles';
 
 export type Props = {
