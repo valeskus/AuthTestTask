@@ -23,9 +23,9 @@ export function CodeInputs({ label, onChange, valid }: Props): JSX.Element {
       <Text>{label}</Text>
       <View style={styles.codeInputsGroup}>
         {codePlaceholderList.map((item, index) => (
-          <>{item === '-' && <Text style={styles.codeLine} key={index}>{item}</Text>}
+          <View key={index}>{item === '-' && <Text style={styles.codeLine} >{item}</Text>}
             {item !== '-' &&
-              <View style={styles.codeInput} key={index}>
+              <View style={styles.codeInput}>
                 <Input
                   onChange={getOnChangeHandler(index)}
                   textAlign="center"
@@ -39,7 +39,7 @@ export function CodeInputs({ label, onChange, valid }: Props): JSX.Element {
                   placeholder='0'
                 />
               </View>}
-          </>
+          </View>
         ))}
       </View>
     </View>

@@ -43,6 +43,11 @@ export function App(): JSX.Element {
           }
         }}>
            <Stack.Screen
+            name="Home"
+            component={Home}
+            options={{ headerShown: false }}
+          />
+           <Stack.Screen
             name="RegisterForm"
             component={RegisterForm}
             options={{ headerShown: false }}
@@ -52,12 +57,6 @@ export function App(): JSX.Element {
             component={Login}
             options={{ headerShown: false }}
           />
-          <Stack.Screen
-            name="Home"
-            component={Home}
-            options={{ headerShown: false }}
-          />
-         
           <Stack.Screen
             name="RegisterCode"
             component={RegisterCode}

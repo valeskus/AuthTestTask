@@ -14,7 +14,7 @@ import {
 
 export const useCodeInputsController = ( onChange: (value: number) => void) => {
     const [code, setCode] = useState<Array<string>>([]);
-    const codePlaceholderList = [{}, {}, {}, '-', {}, {}, {}]
+    const codePlaceholderList = [1, 2, 3, '-', 4, 5, 6]
 
     const refList = useMemo(
         () =>

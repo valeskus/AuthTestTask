@@ -1,18 +1,21 @@
 import { useNavigation } from "@react-navigation/native"
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import { useSetUser } from "../../../stores/user/hooks";
 
 export const useRegistrationFormController = () => {
     const [name, setName] = useState<string>();
     const [lastName, setLastName] = useState<string>();
     const [number, setNumber] = useState<string>();
     const navigation = useNavigation();
+    const setUser = useSetUser();
 
     const onPressContinue = useCallback(() => {
-        if(!name||!lastName||!number){
+        if (!name || !lastName || !number) {
             return
         }
+        setUser({ name, lastName, phoneNumber: number })
         navigation.navigate('RegisterCode')
-    }, [name,lastName,number]);
+    }, [name, lastName, number]);
 
     const onChangeName = useCallback((value: string) => {
         setName(value);
@@ -26,6 +29,14 @@ export const useRegistrationFormController = () => {
         setNumber(value)
     }, [])
 
+    useEffect(()=>{
+        return()=>{
+            setName('');
+            setLastName('')
+            setNumber('');
+        }
+    },[])
+
     return {
         onPressContinue,
         onChangeName,
@@ -34,6 +45,6 @@ export const useRegistrationFormController = () => {
         name,
         lastName,
         number,
-        disabledButton: name&&lastName&&number? false:true
+        disabledButton: name && lastName && number ? false : true
     }
 }
