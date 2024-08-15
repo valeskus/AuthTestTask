@@ -2,7 +2,7 @@ import React from 'react';
 import { Platform, StatusBar, UIManager } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { Register } from './screens/RegistrationScreens';
+import { RegisterForm, RegisterCode } from './screens/RegistrationScreens';
 import { Login } from './screens/Login';
 import { Home } from './screens/Home';
 import { Provider } from 'react-redux';
@@ -19,7 +19,7 @@ if (
 export type RootStackParamList = {
   Home: undefined;
   Register: undefined;
-  Login:undefined;
+  Login: undefined;
 };
 
 const Stack = createStackNavigator();
@@ -33,25 +33,31 @@ declare global {
 export function App(): JSX.Element {
   return (
     <Provider store={store}>
-      {/* <StatusBar backgroundColor="transparent" barStyle="dark-content" translucent /> */}
-    <NavigationContainer >
-      <Stack.Navigator>
-      <Stack.Screen
-          name="Home"
-          component={Home}
-        />
-        <Stack.Screen
-          name="Register"
-          component={Register}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="Login"
-          component={Login}
-          options={{ headerShown: false }}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+      <StatusBar backgroundColor="transparent" barStyle="dark-content" translucent />
+      <NavigationContainer >
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Home"
+            component={Home}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="RegisterForm"
+            component={RegisterForm}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="RegisterCode"
+            component={RegisterCode}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Login"
+            component={Login}
+            options={{ headerShown: false }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
     </Provider>
   );
 }

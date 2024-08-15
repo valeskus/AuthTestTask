@@ -8,6 +8,8 @@ import {
     TextInputChangeEventData,
     TextInputKeyPressEventData,
     View,
+    Keyboard,
+    TouchableWithoutFeedback,
 } from 'react-native';
 import { styles } from './styles';
 import { Colors } from '../Colors';
@@ -43,6 +45,8 @@ export function Input({
 }: Props): JSX.Element {
     const isCodeInput = length === 1 ? true : false;
     return (
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+
         <View style={styles.inputContainer} >
             <Text style={styles.label}> {label} </Text>
             < TextInput
@@ -62,8 +66,9 @@ export function Input({
                 selectTextOnFocus={isSelectTextOnFocus}
                 onKeyPress={onKeyPressed}
                 placeholder={placeholder}
-                placeholderTextColor={Colors.placeholderColor}
+                placeholderTextColor={Colors.secondary}
             />
         </View>
+        </TouchableWithoutFeedback>
     );
 }

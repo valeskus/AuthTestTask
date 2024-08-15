@@ -1,1 +1,2 @@
-export * from './Register';
+export * from './RegisterCode';
+export * from './RegisterForm';

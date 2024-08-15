@@ -3,7 +3,7 @@ import { Pressable, Text, View } from "react-native";
 import { CodeInputs } from "../../../UI/CodeInputs/CodeInputs";
 import { Input } from '../../../UI/Input';
 
-export function CodeForm(): JSX.Element {
+export function RegisterCode(): JSX.Element {
     return (
         <View style={{ flex: 1 }}>
             <Text>Welcome to App</Text>
