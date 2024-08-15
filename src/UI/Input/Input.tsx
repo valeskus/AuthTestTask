@@ -25,6 +25,7 @@ export type Props = {
     textAlign?: TextInputProps['textAlign'];
     isSelectTextOnFocus?: boolean;
     onChange?: (event: NativeSyntheticEvent<TextInputChangeEventData>) => void;
+    onChangeText?: ((text: string) => void);
     onKeyPressed?: (e: NativeSyntheticEvent<TextInputKeyPressEventData>) => void;
 };
 
@@ -42,33 +43,35 @@ export function Input({
     isSelectTextOnFocus,
     textAlign,
     onKeyPressed,
+    onChangeText
 }: Props): JSX.Element {
     const isCodeInput = length === 1 ? true : false;
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
 
-        <View style={styles.inputContainer} >
-            <Text style={styles.label}> {label} </Text>
-            < TextInput
-                textAlign={textAlign}
-                style={
-                    [
-                        styles.input,
-                        isCodeInput && styles.codeInput,
-                        invalid && styles.invalid,
-                        !!value && styles.onFocus
-                    ]}
-                keyboardType={type}
-                maxLength={length}
-                onChange={onChange}
-                value={value}
-                ref={refValue}
-                selectTextOnFocus={isSelectTextOnFocus}
-                onKeyPress={onKeyPressed}
-                placeholder={placeholder}
-                placeholderTextColor={Colors.secondary}
-            />
-        </View>
+            <View style={styles.inputContainer} >
+                <Text style={styles.label}> {label} </Text>
+                < TextInput
+                    textAlign={textAlign}
+                    style={
+                        [
+                            styles.input,
+                            isCodeInput && styles.codeInput,
+                            invalid && styles.invalid,
+                            isCodeInput && !!value && styles.onFocus
+                        ]}
+                    keyboardType={type}
+                    maxLength={length}
+                    onChange={onChange}
+                    onChangeText={onChangeText}
+                    value={value}
+                    ref={refValue}
+                    selectTextOnFocus={isSelectTextOnFocus}
+                    onKeyPress={onKeyPressed}
+                    placeholder={placeholder}
+                    placeholderTextColor={Colors.secondary}
+                />
+            </View>
         </TouchableWithoutFeedback>
     );
 }
