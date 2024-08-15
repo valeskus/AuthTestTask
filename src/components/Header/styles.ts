@@ -17,6 +17,7 @@ export const styles = StyleSheet.create({
     description: {
         fontSize: 18,
         marginBottom: 10,
-        color: Colors.secondaryTextColor
+        color: Colors.secondaryTextColor,
+        textAlign:'center'
     }
 })

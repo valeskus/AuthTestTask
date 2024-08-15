@@ -1,6 +1,6 @@
 export const Colors = {
     primaryTextColor: '#14171D',
-    secondaryTextColor: '#667085',
+    secondaryTextColor: '#727477',
     tertiaryTextColor: '#00D1AC',
     primary: '#30B0C7',
     borderColor: '#DE7ED9',

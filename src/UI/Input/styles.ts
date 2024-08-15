@@ -10,7 +10,8 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 5,
     letterSpacing: 0.04,
     fontWeight: '600',
-    color: Colors.tertiaryTextColor,
+    borderColor: Colors.secondary,
+    color: Colors.secondaryTextColor
   },
   inputContainer: {
     width: '100%',
@@ -24,6 +25,7 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
     borderColor: Colors.secondaryBorderColor,
     fontSize:35,
+    color: Colors.tertiaryTextColor,
   },
   onFocus:{
     borderColor: Colors.borderColor,
