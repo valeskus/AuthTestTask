@@ -16,7 +16,8 @@ export function RegisterForm(): JSX.Element {
         name,
         lastName,
         number,
-        disabledButton
+        invalidNumber,
+        disabledButton,
     } = useRegistrationFormController();
 
     return (
@@ -29,12 +30,12 @@ export function RegisterForm(): JSX.Element {
             <View style={styles.formContainer}>
                 <Input label='Name' placeholder='Enter name' onChangeText={onChangeName} value={name} />
                 <Input label='Last Name' placeholder='Enter last name' onChangeText={onChangeLastName} value={lastName} />
-                <Input label='Phone number' placeholder='+33 222 111 2222' onChangeText={onChangeNumber} type='numeric' value={number} />
-                <Button onPress={onPressContinue} title='Continue' disabled={disabledButton} />
+                <Input label='Phone number' placeholder='+33 222 111 2222' onChangeText={onChangeNumber} type='numeric' value={number} invalid={invalidNumber} />
+                <Button onPress={onPressContinue} title='Continue' disabled={disabledButton}  />
                 <View style={styles.noteContainer}>
                     <View style={styles.note}>
                         <Text style={styles.text}>Do you have any account? </Text>
-                        <Link style={styles.link} to={{ screen: 'Login' }}>Sign up</Link>
+                        <Link style={styles.link} to={{ screen: 'Login' }}>Login</Link>
                     </View>
                 </View>
             </View>

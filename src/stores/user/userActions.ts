@@ -20,18 +20,10 @@ export const setUser = async (userInfo: Omit<RegisterFormModel, 'code'>, dispatc
     }
 };
 
-export const register = async (userInfo: RegisterFormModel) => {
-    try {
-        await User_Api.register(userInfo)
-    } catch (error) {
-        console.log(error)
-    }
+export const register = (userInfo: RegisterFormModel) => {
+    return  User_Api.register(userInfo)
 };
 
 export const sentCode = async (phoneNumber: string) => {
-    try {
-        await User_Api.sentCode(phoneNumber)
-    } catch (error) {
-        console.log(error)
-    }
+    return User_Api.sentCode(phoneNumber)
 };

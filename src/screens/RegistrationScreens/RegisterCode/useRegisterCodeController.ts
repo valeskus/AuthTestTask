@@ -8,25 +8,31 @@ export const useRegisterCodeController = () => {
     const sentCode = useSentCode();
     const registerUser = useRegisterUser();
     const { name, lastName, phoneNumber } = useUserStore();
-    const navigation = useNavigation();
+    const [isLoading, setLoading] = useState<boolean>(false)
+    const [invalidCode, setInvalidCode] = useState<boolean>(false)
 
-    useEffect(() => {
-        if (!phoneNumber) {
-            return
-        }
-        sentCode(phoneNumber)
-    }, [phoneNumber])
+    const navigation = useNavigation();
 
     const handleChange = useCallback((value: number) => {
         setCode(value);
     }, [])
 
-    const onSignUp = useCallback(() => {
+    const onSignUp = useCallback(async () => {
         if (!code || !name || !lastName || !phoneNumber) {
             return
         }
-        registerUser({ name, lastName, phoneNumber, code })
-        navigation.navigate('Login')
+        try {
+            setLoading(true)
+            await registerUser({ name, lastName, phoneNumber, code })
+            navigation.navigate('Login')
+            setInvalidCode(false)
+
+        } catch (error) {
+            setInvalidCode(true)
+        }finally{
+            setLoading(false)
+        }
+
     }, [code, name, lastName, phoneNumber])
 
     const onResent = useCallback(() => {
@@ -37,6 +43,7 @@ export const useRegisterCodeController = () => {
         handleChange,
         onSignUp,
         onResent,
-        disabled: !code
+        invalidCode,
+        disabled: !code || isLoading
     }
 }

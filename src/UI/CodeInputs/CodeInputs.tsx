@@ -7,10 +7,10 @@ import { useCodeInputsController } from './useCodeInputsController';
 export type Props = {
   label: string;
   onChange: (value: number) => void;
-  valid: boolean;
+  invalid: boolean;
 };
 
-export function CodeInputs({ label, onChange, valid }: Props): JSX.Element {
+export function CodeInputs({ label, onChange, invalid }: Props): JSX.Element {
   const {
     codePlaceholderList,
     getOnChangeHandler,
@@ -29,7 +29,7 @@ export function CodeInputs({ label, onChange, valid }: Props): JSX.Element {
                 <Input
                   onChange={getOnChangeHandler(index)}
                   textAlign="center"
-                  invalid={!valid}
+                  invalid={invalid}
                   refValue={refList[index]}
                   onKeyPressed={e => handleKeyPress(e, index)}
                   value={code[index]}

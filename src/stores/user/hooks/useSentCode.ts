@@ -5,8 +5,8 @@ import { sentCode } from '../userActions';
 export const useSentCode = () => {
 
   return React.useCallback(
-    (phoneNumber: string) => {
-      sentCode(phoneNumber);
+    async (phoneNumber: string) => {
+      await sentCode(phoneNumber);
     },
     [],
   );

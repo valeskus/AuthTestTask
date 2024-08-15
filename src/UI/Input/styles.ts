@@ -33,6 +33,6 @@ export const styles = StyleSheet.create({
   },
   invalid: {
     borderColor: 'red',
-    borderWidth: 1,
+    borderWidth: 2,
   },
 });

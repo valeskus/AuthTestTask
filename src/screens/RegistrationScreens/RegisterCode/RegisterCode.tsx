@@ -10,7 +10,8 @@ export function RegisterCode(): JSX.Element {
     const { handleChange,
         onSignUp,
         disabled,
-        onResent } = useRegisterCodeController();
+        onResent,
+        invalidCode } = useRegisterCodeController();
     return (
         <View style={styles.codeContainer}>
             <Header description='Enter the confirmation code that will be sent to you by SMS' />
@@ -18,7 +19,7 @@ export function RegisterCode(): JSX.Element {
                 <View >
                     <CodeInputs label={'Secure code'}
                         onChange={handleChange}
-                        valid={true}
+                        invalid={invalidCode}
                     />
                 </View>
                 <Pressable style={styles.linkContainer} onPress={onResent}>

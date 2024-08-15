@@ -55,8 +55,8 @@ export function Input({
                         [
                             styles.input,
                             isCodeInput && styles.codeInput,
-                            invalid && styles.invalid,
-                            isCodeInput && !!value && styles.onFocus
+                            isCodeInput && !!value && styles.onFocus,
+                            invalid && styles.invalid
                         ]}
                     keyboardType={type}
                     maxLength={length}

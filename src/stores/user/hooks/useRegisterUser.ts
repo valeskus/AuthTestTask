@@ -6,8 +6,8 @@ import { RegisterFormModel } from '../../../models';
 export const useRegisterUser = () => {
 
   return React.useCallback(
-    (userInfo: RegisterFormModel) => {
-        register(userInfo);
+    async (userInfo: RegisterFormModel) => {
+      await register(userInfo);
     },
     [],
   );
