@@ -15,6 +15,9 @@ export const useRegistrationFormController = () => {
         }
         setUser({ name, lastName, phoneNumber: number })
         navigation.navigate('RegisterCode')
+        setName('');
+        setLastName('')
+        setNumber('');
     }, [name, lastName, number]);
 
     const onChangeName = useCallback((value: string) => {
@@ -28,14 +31,6 @@ export const useRegistrationFormController = () => {
     const onChangeNumber = useCallback((value: string) => {
         setNumber(value)
     }, [])
-
-    useEffect(()=>{
-        return()=>{
-            setName('');
-            setLastName('')
-            setNumber('');
-        }
-    },[])
 
     return {
         onPressContinue,
