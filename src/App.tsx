@@ -2,7 +2,7 @@ import React from 'react';
 import { Platform, StatusBar, UIManager } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { Register } from './screens/Register';
+import { Register } from './screens/RegistrationScreens';
 import { Login } from './screens/Login';
 import { Home } from './screens/Home';
 import { Provider } from 'react-redux';
@@ -33,22 +33,21 @@ declare global {
 export function App(): JSX.Element {
   return (
     <Provider store={store}>
-      <StatusBar backgroundColor="transparent" barStyle="dark-content" translucent />
+      {/* <StatusBar backgroundColor="transparent" barStyle="dark-content" translucent /> */}
     <NavigationContainer >
       <Stack.Navigator>
+      <Stack.Screen
+          name="Home"
+          component={Home}
+        />
         <Stack.Screen
-          name="Registration"
+          name="Register"
           component={Register}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Registration"
+          name="Login"
           component={Login}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="Registration"
-          component={Home}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
